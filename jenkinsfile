@@ -1,5 +1,4 @@
-git clone https://github.com/nithyap11223344/test.git
-cd test
+
 
 cat > Jenkinsfile <<'JENKINS'
 pipeline {
