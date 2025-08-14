@@ -1,0 +1,23 @@
+git clone https://github.com/nithyap11223344/test.git
+cd test
+
+cat > Jenkinsfile <<'JENKINS'
+pipeline {
+  agent any
+  stages {
+    stage('Checkout') {
+      steps {
+        // Adjust branch if not 'main'
+        git branch: 'main', url: 'https://github.com/nithyap11223344/test.git'
+      }
+    }
+    stage('List files') {
+      steps { sh 'pwd && ls -la' }
+    }
+  }
+}
+JENKINS
+
+git add Jenkinsfile
+git commit -m "Add Jenkins pipeline to checkout and list files"
+git push origin main
